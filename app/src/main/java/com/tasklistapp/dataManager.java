@@ -18,7 +18,9 @@ public class dataManager {
     }
 
 
-    public void addTask (Task task){
+
+
+    public static void addTask(Task task){
         taskList.add(task);
     }
 
