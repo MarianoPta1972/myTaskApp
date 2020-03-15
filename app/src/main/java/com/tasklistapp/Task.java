@@ -7,6 +7,10 @@ public class Task {
         this.nameTask = nameTask;
     }
 
+    public Task() {
+
+    }
+
     public String getNameTask() {
         return nameTask;
     }
