@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 
-public class dataManager {
+public class dataManager { // לפעם הבאה לשים מחלקה עם אות גדולה
 
     static ArrayList<Task> taskList = new ArrayList<>();
 
@@ -13,15 +13,15 @@ public class dataManager {
         return taskList;
     }
 
-    public static void setTaskList (ArrayList<Task> taskList) {
+    public static void setTaskList(ArrayList<Task> taskList) {
         dataManager.taskList = taskList;
     }
-
-
-
-
-    public static void addTask(Task task){
-        taskList.add(task);
-    }
-
 }
+
+
+
+//    public static void addTask(Task task){
+//        taskList.add(task);
+//    }
+//
+//}

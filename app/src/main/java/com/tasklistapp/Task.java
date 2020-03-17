@@ -6,10 +6,10 @@ public class Task {
     public Task(String nameTask) {
         this.nameTask = nameTask;
     }
-
-    public Task() {
-
-    }
+//
+//    public Task() { אין צורך
+//
+//    }
 
     public String getNameTask() {
         return nameTask;

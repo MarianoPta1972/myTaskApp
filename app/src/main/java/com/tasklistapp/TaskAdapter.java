@@ -17,39 +17,41 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
 
 
-        ArrayList<Task> taskArrayList;
+       //  ArrayList<Task> taskArrayList; אין צורך כי יש לך אחד בתוך הדאטה מאנג'ר
 
-        public TaskAdapter(ArrayList<Task> taskArrayList) {
-            this.taskArrayList = taskArrayList;
-        }
+      //  public TaskAdapter(ArrayList<Task> taskArrayList) { אין צורך
+//            this.taskArrayList = taskArrayList;
+//        }
 
         @NonNull
         @Override
         public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_task, parent, false);
+            View view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.activity_task, parent, false);
 
             return new TaskViewHolder(view);
         }
 
         @Override
         public void onBindViewHolder(@NonNull final TaskViewHolder holder, int position) {
-            Task item = taskArrayList.get(position);
+//            Task item = taskArrayList.get(position);
+            Task item = dataManager.taskList.get(position);  // אני משתמשת בARRAY של הדאטה
             holder.taskName.setText(item.getNameTask());
         }
 
         @Override
         public int getItemCount() {
-            return taskArrayList.size();
-        }
+            return dataManager.taskList.size();
+        } //  גם פה
 
         public class TaskViewHolder extends RecyclerView.ViewHolder {
-            RecyclerView recyclerView;
+        //    RecyclerView recyclerView; זה לא פה
             TextView taskName;
 
             public TaskViewHolder(@NonNull View itemView) {
                 super(itemView);
-                recyclerView = itemView.findViewById(R.id.taskContainer);
+          //      recyclerView = itemView.findViewById(R.id.taskContainer);  זה לא פה
                 taskName = itemView.findViewById(R.id.singleTask);
 
             }
