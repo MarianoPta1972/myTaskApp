@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="status_spinner">
+        <item>TODO</item>
+        <item>
+            IN PROGRESS
+        </item>
+        <item>
+            COMPLETED
+        </item>
+    </string-array>
+</resources>
