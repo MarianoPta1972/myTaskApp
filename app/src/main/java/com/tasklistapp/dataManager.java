@@ -18,10 +18,3 @@ public class dataManager { // לפעם הבאה לשים מחלקה עם אות 
     }
 }
 
-
-
-//    public static void addTask(Task task){
-//        taskList.add(task);
-//    }
-//
-//}

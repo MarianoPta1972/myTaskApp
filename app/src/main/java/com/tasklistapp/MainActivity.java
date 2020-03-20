@@ -32,11 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         addTaskBtn = findViewById(R.id.addTaskBtn);
 
-        //  RecyclerView taskContainer = findViewById(R.id.taskContainer); שים לב לתיקון מחדש בשורה 48
-        // taskContainer.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
-        //  adapter = new TaskAdapter(dataManager.taskList);
-        //   taskContainer.setAdapter(adapter); את ה3 שורות האלו אני מחדש הכי למטה משורה 49
-
         addTaskBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,28 +47,4 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-//            if(data != null){
-//                dataManager.setTaskList(new ArrayList<Task>());
-//                String taskString = data.getStringExtra("list");
-//                try {
-//                    JSONArray array = new JSONArray(taskString);
-//                    for (int i = 0; i < array.length(); i++) {
-//                        Gson gson = new Gson();
-//                        Task task = gson.fromJson(array.getString(i), Task.class);
-//                        dataManager.addTask(task);
-//
-//                    }
-//
-//                    adapter.taskArrayList = dataManager.taskList;
-//                    adapter.notifyDataSetChanged();
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//    }
 

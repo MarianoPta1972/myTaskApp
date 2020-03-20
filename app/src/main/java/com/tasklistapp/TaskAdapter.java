@@ -4,27 +4,15 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.Adapter;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
 
-
-
-       //  ArrayList<Task> taskArrayList; אין צורך כי יש לך אחד בתוך הדאטה מאנג'ר
-
-      //  public TaskAdapter(ArrayList<Task> taskArrayList) { אין צורך
-//            this.taskArrayList = taskArrayList;
-//        }
 
         @NonNull
         @Override
@@ -60,16 +48,15 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         @Override
         public int getItemCount() {
             return dataManager.taskList.size();
-        } //  גם פה
+        }
 
         public class TaskViewHolder extends RecyclerView.ViewHolder {
-        //    RecyclerView recyclerView; זה לא פה
+
             TextView taskName;
             TextView statusName;
 
             public TaskViewHolder(@NonNull View itemView) {
                 super(itemView);
-          //      recyclerView = itemView.findViewById(R.id.taskContainer);  זה לא פה
                 taskName = itemView.findViewById(R.id.singleTask);
                 statusName = itemView.findViewById(R.id.status);
 

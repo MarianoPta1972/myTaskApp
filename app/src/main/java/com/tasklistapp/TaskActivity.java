@@ -20,6 +20,10 @@ import com.google.gson.Gson;
 
 import org.json.JSONArray;
 
+import static com.tasklistapp.Status.COMPLETED;
+import static com.tasklistapp.Status.INPROGRESS;
+import static com.tasklistapp.Status.TODO;
+
 public class TaskActivity extends AppCompatActivity {
 
     EditText taskName;
@@ -49,10 +53,8 @@ public class TaskActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Status newStatus;
                 String newTask = taskName.getText().toString();
-                newStatus = (Status) spinner.getSelectedItem();
-                final Task task = new Task(newTask, newStatus);
+                final Task task = new Task(newTask, getSelectedStatus());
                 AlertDialog.Builder alert = new AlertDialog.Builder(TaskActivity.this);
                 alert.setTitle("You are going to insert a new Task");
                 alert.setMessage("Your Task is: " + taskName.getText() + " and its Status is: " + task.status.name());
@@ -61,11 +63,11 @@ public class TaskActivity extends AppCompatActivity {
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+
                         dataManager.taskList.add(task);
                         Intent intent = new Intent(TaskActivity.this, MainActivity.class);
                         startActivity(intent);
-                        Toast.makeText(TaskActivity.this, spinner.getSelectedItem().toString(),
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TaskActivity.this, "your choosen status is: " + spinner.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -82,6 +84,18 @@ public class TaskActivity extends AppCompatActivity {
                 alert.show();
 
             }
+
+            private Status getSelectedStatus() {
+                String newStat = spinner.getSelectedItem().toString();
+                if (newStat.equals("TODO")) {return TODO;} else if (newStat.equals("IN PROGRESS")) {
+                    return INPROGRESS;} else {return COMPLETED;}
+
+                }
+
         });
     }
-}
+
+
+    }
+
+
