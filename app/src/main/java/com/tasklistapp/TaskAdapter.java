@@ -58,6 +58,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                         holder.taskName.setTextColor(Color.YELLOW);
                         item.status = Status.INPROGRESS;
                         holder.statusName.setText("status: "+ item.status.name());
+                        holder.switchBtn.setLinkTextColor(Color.YELLOW);
 
                     }
                 }
