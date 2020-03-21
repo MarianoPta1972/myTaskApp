@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 
 import com.google.gson.Gson;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     final int REQUEST_CODE = 12345;
 
     Button addTaskBtn;
+
+
     //  TaskAdapter adapter; אני שמה אותו למטה בשורה אחת
 
     @Override
@@ -44,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
         final TaskAdapter adapter = new TaskAdapter();
         rv.setAdapter(adapter);
 
+
+
     }
+
+
 }
 
 
